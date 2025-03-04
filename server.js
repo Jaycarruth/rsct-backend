@@ -20,4 +20,13 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 console.log("🔍 MongoDB URI:", process.env.MONGO_URI);
+app.get("/api/products", (req, res) => {
+  const products = [
+    { id: 1, name: "Large Area Target", description: "High-performance large area sputtering target." },
+    { id: 2, name: "Rotatable Target", description: "Durable rotatable target for enhanced efficiency." },
+    { id: 3, name: "Alloy Target", description: "Custom alloy targets designed for precision applications." },
+    { id: 4, name: "Plasma Spray Target", description: "Advanced plasma/thermal spray target for semiconductor sector." }
+  ];
+  res.json(products);
+});
 
